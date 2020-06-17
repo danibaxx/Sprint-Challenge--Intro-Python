@@ -9,7 +9,12 @@
 # to read this file so that each record is imported into a City instance. Then
 # return the list with all the City instances from the function.
 # Google "python 3 csv" for references and use your Google-fu for other examples.
-#
+import csv
+
+with open(r'C:\Users\danib\lambda\Sprint-Challenge--Intro-Python\src\cityreader\cities.csv', newline='') as x:
+  csv_reader = csv.reader(x, delimiter=',')
+  for row in csv_reader:
+    print(row[0], row[3], row[4])
 # Store the instances in the "cities" list, below.
 #
 # Note that the first line of the CSV is header that describes the fields--this
