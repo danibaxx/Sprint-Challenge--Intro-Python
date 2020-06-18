@@ -11,15 +11,16 @@
 # Google "python 3 csv" for references and use your Google-fu for other examples.
 import csv
 
-with open(r'C:\Users\danib\lambda\Sprint-Challenge--Intro-Python\src\cityreader\cities.csv', newline='') as x:
-  csv_reader = csv.reader(x, delimiter=',')
-  for row in csv_reader:
-    print(row[0], row[3], row[4])
+with open(r'C:\Users\danib\lambda\Sprint-Challenge--Intro-Python\src\cityreader\cities.csv', 'r', newline='') as read:
+  csv_reader = csv.reader(read, delimiter=',')
+  for row, colm in csv_reader:
+  #   print(row)
 # Store the instances in the "cities" list, below.
 #
 # Note that the first line of the CSV is header that describes the fields--this
 # should not be loaded into a City object.
-cities = []
+    cities = [f'{colm}{row[0]}']
+    print('in new list', cities)
 
 def cityreader(cities=[]):
   # TODO Implement the functionality to read from the 'cities.csv' file
